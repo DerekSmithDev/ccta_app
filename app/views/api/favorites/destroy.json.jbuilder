@@ -1,0 +1,1 @@
+json.Deleted_favorite @input_id
