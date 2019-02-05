@@ -1,6 +1,26 @@
 class Api::FavoritesController < ApplicationController
   def index
     @favorites = Favorite.all
+
+    last_visit_search = params[:last_visit]
+    if last_visit_search
+      @favorites = @favorites.where(last_visit: last_visit_search)
+    end
+
+    type_of_stop_search = params[:type_of_stop]
+    if type_of_stop_search
+      @favorites = @favorites.where("type_of_stop ILIKE ?", "%#{type_of_stop_search}%")
+    end
+
+    stop_name_search = params[:stop_name]
+    if stop_name_search
+      @favorites = @favorites.where("stop_name ILIKE ?", "%#{stop_name_search}%")
+    end
+
+    address_search = params[:address]
+    if address_search
+      @favorites = @favorites.where("address ILIKE ?", "%#{address_search}%")
+    end
     render "index.json.jbuilder"
   end
 
