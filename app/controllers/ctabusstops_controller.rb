@@ -1,0 +1,2 @@
+class CtabusstopsController < ApplicationController
+end
