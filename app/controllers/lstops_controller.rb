@@ -1,0 +1,2 @@
+class LstopsController < ApplicationController
+end
