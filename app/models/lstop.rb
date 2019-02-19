@@ -1,0 +1,2 @@
+class Lstop < ApplicationRecord
+end
