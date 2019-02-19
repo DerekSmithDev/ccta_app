@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_15_014528) do
+ActiveRecord::Schema.define(version: 2019_02_19_024934) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,20 @@ ActiveRecord::Schema.define(version: 2019_02_15_014528) do
     t.integer "location_type"
     t.integer "parent_station"
     t.integer "wheelchair_boarding"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "divvystops", force: :cascade do |t|
+    t.integer "station_id"
+    t.string "station_name"
+    t.string "address"
+    t.integer "total_docks"
+    t.integer "docks_in_service"
+    t.string "status"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
