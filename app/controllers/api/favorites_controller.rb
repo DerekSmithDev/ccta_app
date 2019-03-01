@@ -32,10 +32,10 @@ class Api::FavoritesController < ApplicationController
 
   def create
     @favorite = Favorite.new(
-      a: params["type_of_stop"],
-      b: params["stop_name"],
-      c: params[:last_visit],
-      d: params["address"]
+      type_of_stop: params["type_of_stop"],
+      stop_name: params["stop_name"],
+      last_visit: params[:last_visit],
+      address: params["address"]
       )
     if @favorite.save
       render "show.json.jbuilder"
