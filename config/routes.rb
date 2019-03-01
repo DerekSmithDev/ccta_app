@@ -24,5 +24,12 @@ Rails.application.routes.draw do
     patch "/stations/:id" => "stations#update"
     delete "/stations/:id" => "stations#destroy"
 
+    # Divvy Stops 
+    get "/divvystops" => "divvystops#index"
+    post "/divvystops" => "divvystops#create"
+    get "/divvystops/:id" => "divvystops#show"
+    patch "/divvystops/:id" => "divvystops#update"
+    delete "/divvystops/:id" => "divvystops#destroy"
+
   end
 end
