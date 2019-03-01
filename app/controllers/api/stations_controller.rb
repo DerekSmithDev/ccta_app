@@ -21,6 +21,7 @@ class Api::StationsController < ApplicationController
       longitude: longitude_minus_one..longitude_plus_one)
 
     render "index.json.jbuilder"
+
   end
 
   # def create
