@@ -4,10 +4,6 @@ class Api::LstopsController < ApplicationController
 
     station_id = params[:station_id]
 
-    station_id_array = station_id.split(',')
-
-    pp station_id_array
-
     color = params[:color]
 
     @lstops = Lstop.where(:station_id => [station_id]).where("#{color} = ?", true)

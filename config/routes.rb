@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
     # L Stops
     get "/lstops" => "lstops#index"
+    post "/lstops" => "lstops#index"
     post "/lstops" => "lstops#create"
     get "/lstops/:id" => "lstops#show"
     patch "/lstops/:id" => "lstops#update"
