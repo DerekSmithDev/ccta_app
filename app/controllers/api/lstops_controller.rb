@@ -6,7 +6,7 @@ class Api::LstopsController < ApplicationController
 
     color = params[:color]
 
-    @lstops = Lstop.where(:station_id => [station_id]).where("#{color} = ?", true)
+    @lstops = Lstop.where(station_id: => [station_id]).where("#{color} = ?", true)
 
     render "index.json.jbuilder"
 
